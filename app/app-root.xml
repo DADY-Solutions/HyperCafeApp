@@ -1,3 +1,1 @@
-<Frame 
-    defaultPage="main-page">
-</Frame>
+<Frame defaultPage="views/login-page/login-page"></Frame>

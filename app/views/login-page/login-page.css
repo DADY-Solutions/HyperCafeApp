@@ -1,0 +1,29 @@
+FlexboxLayout {
+    justify-content: center;
+    align-items: center;
+    background-size:fill;
+    background-image: url("~/images/loginCoffee.jpg");
+  }
+  StackLayout {
+    width: 300;
+    padding: 10 16;
+    background-color:transparent;
+  }
+
+  StackLayout Label{
+      font-family: sans-serif;
+      font-size:24;
+      color:#EFAC43;
+      text-align: center;
+  }
+
+  #form Image{
+      width: 180dp;
+      height:140dp;
+  }
+
+  .btn-primary{
+    background-color:#EFAC43;
+    margin-left:0;
+    margin-right:0;
+  }

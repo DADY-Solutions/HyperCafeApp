@@ -2,13 +2,13 @@
 
 // Uncomment to add recyclerview-v7 dependency
 //dependencies {
-//	compile 'com.android.support:recyclerview-v7:+'
+//	implementation 'com.android.support:recyclerview-v7:+'
 //}
 
 android {  
   defaultConfig {  
     generatedDensities = []
-    applicationId = "org.dadysolutions.hypercafeapp" 
+    applicationId = "org.nativescript.HyperCafeApp" 
     
     //override supported platforms
     // ndk {
