@@ -1,0 +1,8 @@
+#Node Related
+/node_modules
+
+#NativeScript related
+/platforms
+
+#VSCode related
+./vscode
