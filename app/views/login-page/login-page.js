@@ -34,9 +34,8 @@ function login(){
             
         })
         .then(function(){
-            
-                //frameModule.topmost().navigate("views/"+viewToShow+"/"+viewToShow);         
-           
+            //FIXME
+            //frameModule.topmost().navigate("views/"+viewToShow+"/"+viewToShow);         
         })
 
 }

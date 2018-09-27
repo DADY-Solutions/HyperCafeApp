@@ -35,7 +35,6 @@ function UserLoginViewModel(info) {
 
     
   viewModel.register = function() {
-    console.log("user-login-model => register Username ="+viewModel.get('email')+" password ="+viewModel.get('password'));
     return fetchModule.fetch(config.apiUrl + "user/" + config.appKey, {
       method: "POST",
       body: JSON.stringify({
