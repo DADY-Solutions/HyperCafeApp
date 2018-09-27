@@ -8,7 +8,7 @@
 android {  
   defaultConfig {  
     generatedDensities = []
-    applicationId = "org.dadysolutions.hypercafeapp" 
+    applicationId = "org.dadysolutions.hypercafeapp"  
     
     //override supported platforms
     // ndk {
