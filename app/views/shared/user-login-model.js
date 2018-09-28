@@ -1,6 +1,7 @@
 const observableModule = require("data/observable");
 const observableArray = require("data/observable-array").ObservableArray;
 var config = require("../shared/config");
+var constants = require("../shared/constants");
 var fetchModule = require("fetch");
 
 function UserLoginViewModel(info) {
@@ -10,7 +11,8 @@ function UserLoginViewModel(info) {
     const viewModel = observableModule.fromObject({
         email:"Xampis",
         password:"Xampis",
-        isLoggingIn : true
+        isLoggingIn : true,
+        role:""
     });
 
 
@@ -29,6 +31,7 @@ function UserLoginViewModel(info) {
           })
           .then(function (data) {
             console.log("finished logging in");
+            viewModel.role = data.role;
             config.token = data._kmd.authtoken;
           });
     };
@@ -41,6 +44,7 @@ function UserLoginViewModel(info) {
         username: viewModel.get("email"),
         email: viewModel.get("email"),
         password: viewModel.get("password"),
+        role: constants.customerRole
       }),
       headers: getCommonHeaders()
     }).then(handleErrors);
@@ -60,7 +64,7 @@ function getCommonHeaders() {
   function handleErrors(response) {
     if (!response.ok) {
       console.log(JSON.stringify(response));
-      throw Error(response.statusText);
+      throw Error(response._bodyText);
     }
     return response;
   }

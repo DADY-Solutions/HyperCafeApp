@@ -6,6 +6,8 @@ logic, and to set up your page’s data binding.
 
 const dialogsModule = require("ui/dialogs");
 const frameModule = require("ui/frame");
+const constants = require("../shared/constants");
+const Toast = require("nativescript-toast");
 
 const UserLoginViewModel = require("../shared/user-login-model");
 const user = new UserLoginViewModel();
@@ -26,16 +28,20 @@ function login(){
     user.login()
         .catch(function(error){
             console.log(error);
-            dialogsModule.alert({
-                message:"Unfortunately we could not find your account.",
-                okButtonText:"OK"
-            });
+            //TODO print the actual error
+            //undefined when using error.description or error._bodyTextDescription!!! 
+            Toast.makeText("Please use the correct credentials",).show();
             return Promise.reject();
             
         })
         .then(function(){
-            //FIXME
-            //frameModule.topmost().navigate("views/"+viewToShow+"/"+viewToShow);         
+        
+            if(user.role == constants.customerRole){
+                 viewToShow = constants.customerView;
+            }else{
+                 viewToshow = constants.customerView;
+            }
+            frameModule.topmost().navigate(viewToShow);         
         })
 
 }
@@ -43,16 +49,12 @@ function login(){
 function signUp(){
     user.register()
         .then(function(){
-            dialogsModule.alert({
-                message:"Your account was successfully created.",
-                okButtonText:"OK"
-            });
+            Toast.makeText("Your account was successfully created").show();
         })
         .catch(function(error){
-            dialogs.alert({
-                message:"Unfortunately we were unable to create your account.",
-                okButtonText:"OK"
-            });
+            //TODO print the actual error
+            //undefined when using error.description or error._bodyTextDescription!!! 
+           Toast.makeText("We were unable to create your account").show();
         });
 }
 
