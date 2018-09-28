@@ -1,0 +1,15 @@
+<Page class="page"
+    navigatingTo="onNavigatingTo"  
+    xmlns="http://schemas.nativescript.org/tns.xsd">
+
+    <FlexboxLayout>
+        <StackLayout id="form" orientation="vertical">
+            <Image src="~/images/hyperCafeLogo.png"/>
+            <Label text="HYPER CAFE" class="p-5"/>
+            <TextField id="email" text="{{email}}" hint="Username" class="input input-border" keyboardType="email" autoCorrect="false" autocapitalisationType="none"/>
+            <TextField id="password" text="{{password}}" hint="Password" class="input input-border" secure="true"/>
+            <Button class="btn btn-primary" text="{{isLoggingIn ? 'Login' :'Sign up'}}" tap="submit"/>
+            <Button class="link" text="{{isLoggingIn ? 'Sign up' : 'Back to Login'}}" tap="toggleDisplay"/>
+        </StackLayout>
+    </FlexboxLayout>
+</Page>
