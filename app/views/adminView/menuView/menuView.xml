@@ -1,0 +1,15 @@
+<Page class="page"
+    xmlns="http://schemas.nativescript.org/tns.xsd"
+     xmlns:accordion="nativescript-accordion">
+    <Page.actionBar>
+        <ActionBar title="Menu Items">
+            <ActionItem
+                ios.systemIcon="4" ios.position="left"
+                 android.systemIcon="ic_input_add" android.position="actionBar">
+            </ActionItem>
+        </ActionBar>
+    </Page.actionBar>
+    
+    
+
+</Page>
