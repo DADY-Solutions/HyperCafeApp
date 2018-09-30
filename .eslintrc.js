@@ -16,5 +16,9 @@ module.exports = {
         "space-in-parens": [2, "never"],
         "object-curly-spacing": [2, "never"],
         "eol-last": 2,
+        "no-spaced-func": 2,
+        "key-spacing": [2, {"beforeColon": false, "afterColon": true}],
+        "space-before-blocks": [2, "always"],
+        "space-before-function-paren": [2, "never"],
     }
 };
