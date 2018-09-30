@@ -36,7 +36,7 @@ function login() {
       if (user.role === constants.customerRole) {
         viewToShow = constants.customerView
       } else {
-        viewToShow = constants.customerView
+        viewToShow = constants.adminView
       }
       frameModule.topmost().navigate(viewToShow)
     })
