@@ -19,20 +19,19 @@ http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawe
             <ScrollView row="1">
                 <StackLayout class="sidedrawer-content">
                     <GridLayout columns="auto, *" title="Customer" tap="onNavigationItemTap">
+                        <!-- Add these lines later on each GridLayout-->
                         <!-- class="{{ 'sidedrawer-list-item' + (selectedPage === 'Home' ? ' selected': '') }}" -->
                         <!-- route="home/home-page"  -->
                         <Label row="0" col="0" text="&#xf015;" class="fa" />
-                        <Label row="0" col="1" text="Home" class="p-r-10" />
+                        <Label row="0" col="1" text="Test1" class="p-r-10" />
                     </GridLayout>
 
                     <StackLayout class="hr-light"></StackLayout>
 
                     <GridLayout columns="auto, *"
                         title="Settings" tap="onNavigationItemTap">
-                        <!-- class="{{ 'sidedrawer-list-item' + (selectedPage === 'Settings' ? ' selected': '') }}"
-                        route="settings/settings-page"  -->
                         <Label row="0" col="0" text="&#xf013;" class="fa" />
-                        <Label row="0" col="1" text="Settings" class="p-r-10" />
+                        <Label row="0" col="1" text="Test2" class="p-r-10" />
                     </GridLayout>
                 </StackLayout>
             </ScrollView>
