@@ -9,6 +9,12 @@
             </ActionItem>
         </ActionBar>
     </Page.actionBar>
+
+    <GridLayout>
+      <GridLayout row="0" columns="*, auto" class="add-bar">
+        <TextField text="{{ grocery }}" id="grocery" hint="Enter a grocery item" col="0" />
+        <Image src="~/images/add.png" tap="add" col="1"/>
+      </GridLayout>
     
     
 
