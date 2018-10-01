@@ -1,7 +1,32 @@
-<Page class="page"
+<Page 
+    class="page"
+    navigatingTo="onNavigatingTo"
     xmlns="http://schemas.nativescript.org/tns.xsd">
 
-    <FlexboxLayout>
+     <ActionBar class="action-bar">
+        <!-- 
+        Use the NavigationButton as a side-drawer button in Android
+        because ActionItems are shown on the right side of the ActionBar
+        -->
+        <NavigationButton 
+            ios:visibility="collapsed"
+            icon="res://menu" tap="onDrawerButtonTap">
+        </NavigationButton>
+        <!-- 
+        Use the ActionItem for IOS with position set to left. Using the
+        NavigationButton as a side-drawer button in iOS is not possible,
+        because its function is to always navigate back in the application.
+        -->
+        <!-- icon="res://navigation/menu" -->
+        <ActionItem 
+            android:visibility="collapsed" 
+            tap="onDrawerButtonTap"
+            ios.position="left">
+        </ActionItem>
+        <Label class="action-bar-title" text="Home"></Label>
+    </ActionBar>
+
+    <FlexboxLayout class="page-content">
         <StackLayout orientation="vertical">
             <Label text="Customer"/>
         </StackLayout>
