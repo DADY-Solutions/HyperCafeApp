@@ -1,8 +1,8 @@
 <Page class="page"
     xmlns="http://schemas.nativescript.org/tns.xsd"
-     xmlns:accordion="nativescript-accordion">
+    xmlns:customAccordion="../../shared/menuCategoriesView">
     <Page.actionBar>
-        <ActionBar title="Menu Items">
+        <ActionBar title="Menu">
             <ActionItem
                 ios.systemIcon="4" ios.position="left"
                  android.systemIcon="ic_input_add" android.position="actionBar">
@@ -12,9 +12,11 @@
 
     <GridLayout>
       <GridLayout row="0" columns="*, auto" class="add-bar">
-        <TextField text="{{ grocery }}" id="grocery" hint="Enter a grocery item" col="0" />
+        <TextField text="{{ categoryToAdd }}" id="category" hint="Enter a new category name" col="0" />
         <Image src="~/images/add.png" tap="add" col="1"/>
       </GridLayout>
+    </GridLayout>
+
     
     
 

@@ -7,20 +7,20 @@
             </GridLayout>
         </accordion:Accordion.headerTemplate>
  
-    <accordion:Accordion.itemTemplate>
-        <StackLayout headerText="First">
-                    <Image src="{{image}}"/>
-                    <Label text="{{text}}"/>
-                </StackLayout>
-            </accordion:Accordion.itemTemplate>
-            
- 
-            <accordion:Accordion.footerTemplate>
-                <GridLayout backgroundColor="yellow" columns="auto,*">
-                    <Label text="{{footer}}"/>
-                    <Label col="1" text="-"/>
-                </GridLayout>
-            </accordion:Accordion.footerTemplate>
- 
+        <accordion:Accordion.itemTemplate>
+            <StackLayout headerText="First">
+                <Image src="{{image}}"/>
+                <Label text="{{text}}"/>
+            </StackLayout>
+        </accordion:Accordion.itemTemplate>
+                
+    
+        <accordion:Accordion.footerTemplate>
+            <GridLayout backgroundColor="yellow" columns="auto,*">
+                <Label text="{{footer}}"/>
+                <Label col="1" text="-"/>
+            </GridLayout>
+        </accordion:Accordion.footerTemplate>
+
     </accordion:Accordion>
 </FlexboxLayout>
