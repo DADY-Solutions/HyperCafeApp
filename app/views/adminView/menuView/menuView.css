@@ -1,0 +1,24 @@
+
+.add-bar Image{
+    height: 15;
+    vertical-align: center;
+    margin-left: 10;
+    margin-right: 10;
+}
+
+.add-bar TextField{
+    padding:10;
+}
+
+.acc_header_label{
+    width:100%;
+    height: 45;
+    font-size:25;
+    text-align: center;
+}
+
+Label {
+    background-color: white;
+    border-bottom-width: 1;
+    border-bottom-color: gray;
+  }
