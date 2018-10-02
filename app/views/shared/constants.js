@@ -25,14 +25,17 @@ const clientDrawerOptions = {
   menu: {
     label: 'Menu',
     value: 'menu',
+    route: 'routes/menu'
   },
   order: {
     label: 'Order',
     value: 'order',
+    route: 'routes/order'
   },
   contactUs: {
     label: 'Contact Us',
     value: 'contactUs',
+    route: 'routes/contactUs'
   },
 }
 

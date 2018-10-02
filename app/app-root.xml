@@ -21,7 +21,7 @@ http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawe
                     <!-- Hardcoded solution for Clients Navigation Drawer -->
                     <!-- This should be implemented as a  -->
                     <!-- TODO: Fix route, point to the proper route -->                    
-                    <GridLayout columns="auto, *" title="Menu" tap="onNavigationItemTap" route="test">
+                    <GridLayout columns="auto, *" title="Menu" tap="onNavigationItemTap" route="/views/customerView/menu/customerMenu">
                         <!-- TODO: Add these lines later on each GridLayout-->
                         <!-- class="{{ 'sidedrawer-list-item' + (selectedPage === 'Home' ? ' selected': '') }}" -->
                         <!-- route="home/home-page"  -->
@@ -29,7 +29,7 @@ http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawe
                         <Label row="0" col="1" text="Menu" class="p-r-10" />
                     </GridLayout>
                     <!-- TODO: Fix route, point to the proper route -->
-                    <GridLayout columns="auto, *" title="Order" tap="onNavigationItemTap" route="test">
+                    <GridLayout columns="auto, *" title="Order" tap="onNavigationItemTap" route="/views/customerView/order/customerOrder">
                         <!-- TODO: Add these lines later on each GridLayout-->
                         <!-- class="{{ 'sidedrawer-list-item' + (selectedPage === 'Home' ? ' selected': '') }}" -->
                         <!-- route="home/home-page"  -->
@@ -37,7 +37,7 @@ http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawe
                         <Label row="0" col="1" text="Order" class="p-r-10" />
                     </GridLayout>
                     <!-- TODO: Fix route, point to the proper route -->
-                    <GridLayout columns="auto, *" title="Contact Us" tap="onNavigationItemTap" route="test">
+                    <GridLayout columns="auto, *" title="Contact Us" tap="onNavigationItemTap" route="/views/customerView/contactus/customerContactUs">
                         <!-- TODO: Add these lines later on each GridLayout-->
                         <!-- class="{{ 'sidedrawer-list-item' + (selectedPage === 'Home' ? ' selected': '') }}" -->
                         <!-- route="home/home-page"  -->
