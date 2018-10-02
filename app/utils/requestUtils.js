@@ -15,5 +15,17 @@ function handleErrors(response) {
   return response
 }
 
+//used to authenticate the requests after the user
+//has logged in. The reason this function is used
+//is that after the user is logged in the login token that
+//is returned is needed to authenticate the requests
+function getCommonHeadersAfterLogin() {
+  return{
+    'Content-Type': 'application/json',
+    'Authorization': 'Kinvey '+config.token
+  }
+}
+
 exports.getCommonHeaders = getCommonHeaders
 exports.handleErrors = handleErrors
+exports.getCommonHeadersAfterLogin = getCommonHeadersAfterLogin
