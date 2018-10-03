@@ -11,7 +11,7 @@
 
         <GridLayout row="0" columns="*, auto" class="add-bar">
             <TextField text="{{category}}" id="category" hint="Enter a new category name" col="0" />
-            <Image src="~/images/add.png" tap="add" col="1"/>
+            <Image src="~/images/add.png" tap="addCategory" col="1"/>
         </GridLayout>
         
         <GridLayout row="1">

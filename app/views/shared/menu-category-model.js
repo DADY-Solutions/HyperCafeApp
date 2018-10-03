@@ -22,7 +22,7 @@ function MenuCategoryModel(categories) {
         return response.json()
       })
       .then(function(data) {
-        viewModel.push({categoryName: category.categoryName, id: data._id})
+        viewModel.push({categoryName: category, id: data._id})
       })
   }
 

@@ -34,7 +34,7 @@ function login() {
     .then(function() {
       let viewToShow
       if (user.role === constants.customerRole) {
-        viewToShow = constants.customerView
+        viewToShow = 'views/adminView/menuView/menuView'
       } else {
         viewToShow = constants.adminView
       }
