@@ -1,8 +1,5 @@
-<!--
-RadSideDrawer is a UI component part of the Progress NativeScript UI set of components.
-Learn more about the RadSideDrawer UI component and how it can be customized in this documentation article:
-http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawer/getting-started
--->
+<!-- TODO: Find a way to fill the label and route from the enums. -->
+<!-- TODO: Implement FontAwesome if icons will be displayed on the navigation drawer -->
 <nsDrawer:RadSideDrawer id="sideDrawer" xmlns:nsDrawer="nativescript-ui-sidedrawer" loaded="onLoaded">
     <nsDrawer:RadSideDrawer.drawerTransition>
         <nsDrawer:SlideInOnTopTransition/>
@@ -19,28 +16,22 @@ http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawe
             <ScrollView row="1">
                 <StackLayout class="sidedrawer-content">
                     <!-- Hardcoded solution for Clients Navigation Drawer -->
-                    <!-- This should be implemented as a  -->
-                    <!-- TODO: Fix route, point to the proper route -->                    
+                    <!-- This should be implemented as a  -->                  
                     <GridLayout columns="auto, *" title="Menu" tap="onNavigationItemTap" route="/views/customerView/menu/customerMenu">
                         <!-- TODO: Add these lines later on each GridLayout-->
                         <!-- class="{{ 'sidedrawer-list-item' + (selectedPage === 'Home' ? ' selected': '') }}" -->
-                        <!-- route="home/home-page"  -->
                         <!-- <Label row="0" col="0" text="&#xf015;" class="fa" />  -->
                         <Label row="0" col="1" text="Menu" class="p-r-10" />
                     </GridLayout>
-                    <!-- TODO: Fix route, point to the proper route -->
                     <GridLayout columns="auto, *" title="Order" tap="onNavigationItemTap" route="/views/customerView/order/customerOrder">
                         <!-- TODO: Add these lines later on each GridLayout-->
                         <!-- class="{{ 'sidedrawer-list-item' + (selectedPage === 'Home' ? ' selected': '') }}" -->
-                        <!-- route="home/home-page"  -->
                         <!-- <Label row="0" col="0" text="&#xf015;" class="fa" /> -->
                         <Label row="0" col="1" text="Order" class="p-r-10" />
                     </GridLayout>
-                    <!-- TODO: Fix route, point to the proper route -->
                     <GridLayout columns="auto, *" title="Contact Us" tap="onNavigationItemTap" route="/views/customerView/contactus/customerContactUs">
                         <!-- TODO: Add these lines later on each GridLayout-->
                         <!-- class="{{ 'sidedrawer-list-item' + (selectedPage === 'Home' ? ' selected': '') }}" -->
-                        <!-- route="home/home-page"  -->
                         <!-- <Label row="0" col="0" text="&#xf015;" class="fa" /> -->
                         <Label row="0" col="1" text="Contact Us" class="p-r-10" />
                     </GridLayout>
