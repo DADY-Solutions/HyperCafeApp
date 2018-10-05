@@ -1,10 +1,14 @@
+//TODO: Find a way to assing the paths and the labels on the Navigation Drawer from here
+
 const application = require('tns-core-modules/application')
 const frameModule = require('tns-core-modules/ui/frame')
 const AppRootViewModel = require('./app-root-view-model')
 
+const viewModel = AppRootViewModel()
+
 function onLoaded(args) {
   const drawerComponent = args.object
-  drawerComponent.bindingContext = new AppRootViewModel()
+  drawerComponent.bindingContext = viewModel
 }
 
 function onNavigationItemTap(args) {
