@@ -2,6 +2,7 @@ const observableModule = require('data/observable')
 var config = require('../shared/config')
 var constants = require('../shared/constants')
 var fetchModule = require('fetch')
+var requestUtils = require('../../utils/requestUtils')
 
 function UserLoginViewModel() {
 
@@ -20,9 +21,9 @@ function UserLoginViewModel() {
         username: viewModel.get('email'),
         password: viewModel.get('password')
       }),
-      headers: getCommonHeaders()
+      headers: requestUtils.getCommonHeaders()
     })
-      .then(handleErrors)
+      .then(requestUtils.handleErrors)
       .then(function(response) {
         return response.json()
       })
@@ -42,27 +43,14 @@ function UserLoginViewModel() {
         password: viewModel.get('password'),
         role: constants.customerRole
       }),
-      headers: getCommonHeaders()
-    }).then(handleErrors)
+      headers: requestUtils.getCommonHeaders()
+    }).then(requestUtils.handleErrors)
   }
 
   return viewModel
 }
 
-function getCommonHeaders() {
-  return {
-    'Content-Type': 'application/json',
-    'Authorization': config.appUserHeader,
-    'X-Kinvey-API-Version': config.apiVersion
-  }
-}
 
-function handleErrors(response) {
-  if (!response.ok) {
-    throw Error(response._bodyText)
-  }
-  return response
-}
 
 
 module.exports = UserLoginViewModel

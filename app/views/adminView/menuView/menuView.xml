@@ -1,0 +1,37 @@
+<Page class="page"
+    loaded="loaded"  
+    xmlns="http://schemas.nativescript.org/tns.xsd"
+    xmlns:accordion="nativescript-accordion">
+    
+    <Page.actionBar>
+      <ActionBar title="Edit Menu"/>
+    </Page.actionBar>
+    
+    <GridLayout rows="auto,*">
+
+        <GridLayout row="0" columns="*, auto" class="add-bar">
+            <TextField text="{{category}}" id="category" hint="Enter a new category name" col="0" />
+            <Image src="~/images/add.png" tap="addCategory" col="1"/>
+        </GridLayout>
+        
+        <GridLayout row="1">
+            <accordion:Accordion items="{{categories}}" itemTapped="tapped" headerTextBold="true" allowMultiple="true" class="p-15" >
+                <accordion:Accordion.headerTemplate>
+                    <GridLayout columns="auto">
+                        <Label class = "acc_header_label" text="{{categoryName}}"/>
+                    </GridLayout>
+                </accordion:Accordion.headerTemplate>
+        
+                <!-- <accordion:Accordion.itemTemplate>
+                    <StackLayout headerText="First">
+                            
+                        <Label text="{{itemName}}"/>
+                    </StackLayout>
+                </accordion:Accordion.itemTemplate> -->
+                        
+            </accordion:Accordion>
+
+        </GridLayout>
+    </GridLayout>
+    
+</Page>
