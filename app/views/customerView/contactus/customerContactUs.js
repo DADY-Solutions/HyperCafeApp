@@ -5,7 +5,7 @@ const app = require('tns-core-modules/application')
 //   page.bindingContext = new HomeViewModel()
 // }
 
-function onDrawerButtonTap(args) {
+function onDrawerButtonTap() {
   const sideDrawer = app.getRootView()
   sideDrawer.showDrawer()
 }

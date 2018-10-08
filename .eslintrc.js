@@ -20,5 +20,7 @@ module.exports = {
         "key-spacing": [2, {"beforeColon": false, "afterColon": true}],
         "space-before-blocks": [2, "always"],
         "space-before-function-paren": [2, "never"],
+        "no-var": 2,
+        "space-infix-ops": 2,
     }
 };

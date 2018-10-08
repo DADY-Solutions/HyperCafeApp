@@ -1,8 +1,9 @@
+const fetchModule = require('fetch')
 const observableModule = require('data/observable')
-var config = require('../shared/config')
-var constants = require('../shared/constants')
-var fetchModule = require('fetch')
-var requestUtils = require('../../utils/requestUtils')
+
+const config = require('../shared/config')
+const {customer} = require('../shared/constants')
+const requestUtils = require('../../utils/requestUtils')
 
 function UserLoginViewModel() {
 
@@ -15,7 +16,7 @@ function UserLoginViewModel() {
 
 
   viewModel.login = function() {
-    return fetchModule.fetch(config.apiUrl + 'user/' + config.appKey + '/login', {
+    return fetchModule.fetch(`${config.apiUrl}user/${config.appKey}/login`, {
       method: 'POST',
       body: JSON.stringify({
         username: viewModel.get('email'),
@@ -35,13 +36,13 @@ function UserLoginViewModel() {
   }
 
   viewModel.register = function() {
-    return fetchModule.fetch(config.apiUrl + 'user/' + config.appKey, {
+    return fetchModule.fetch(`${config.apiUrl}user/${config.appKey}`, {
       method: 'POST',
       body: JSON.stringify({
         username: viewModel.get('email'),
         email: viewModel.get('email'),
         password: viewModel.get('password'),
-        role: constants.customerRole
+        role: customer.role,
       }),
       headers: requestUtils.getCommonHeaders()
     }).then(requestUtils.handleErrors)

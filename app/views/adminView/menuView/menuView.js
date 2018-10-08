@@ -1,6 +1,7 @@
-const MenuCategoryModel = require('../../shared/menu-category-model')
 const Toast = require('nativescript-toast')
 const observableModule = require('data/observable')
+
+const MenuCategoryModel = require('../../shared/menu-category-model')
 
 let page
 
@@ -30,7 +31,7 @@ exports.addCategory = function() {
   }
 
   //checking that the category does not already exist
-  for(let i=0;i<categories.length;i++) {
+  for(let i = 0; i < categories.length; i++) {
     if(categories.getItem(i).categoryName == categoryToAdd.trim()) {
       Toast.makeText('This category already exists!','long').show()
       return

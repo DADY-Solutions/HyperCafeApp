@@ -7,7 +7,7 @@ function onNavigatingTo(args) {
   page.bindingContext = new HomeViewModel()
 }
 
-function onDrawerButtonTap(args) {
+function onDrawerButtonTap() {
   const sideDrawer = app.getRootView()
   sideDrawer.showDrawer()
 }

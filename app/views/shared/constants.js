@@ -21,7 +21,7 @@ const adminDrawerOptions = {
   },
 }
 
-const clientDrawerOptions = {
+const customerDrawerOptions = {
   menu: {
     label: 'Menu',
     value: 'menu',
@@ -39,19 +39,18 @@ const clientDrawerOptions = {
   },
 }
 
-exports.adminDrawerOptions = adminDrawerOptions
-exports.clientDrawerOptions = clientDrawerOptions
-
-// TODO: Change this like the above
-module.exports = {
-  //Role constants
-  customerRole: 'Customer',
-  adminRole: 'Admin',
-
-  //View constants
-  customerView: 'views/customerView/customerView',
-  adminView: 'views/adminView/adminView',
-
-  adminDrawerOptions,
-  clientDrawerOptions,
+const admin = {
+  role: 'Admin',
+  homescreen: 'views/adminView/adminView',
+  drawerOptions: adminDrawerOptions,
 }
+
+const customer = {
+  role: 'Customer',
+  homescreen: 'views/customerView/customerView',
+  drawerOptions: customerDrawerOptions,
+}
+
+exports.admin = admin
+exports.customer = customer
+

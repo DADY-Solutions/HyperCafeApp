@@ -5,7 +5,7 @@ logic, and to set up your page’s data binding.
 */
 
 const frameModule = require('ui/frame')
-const constants = require('../shared/constants')
+const {customer, admin} = require('../shared/constants')
 const Toast = require('nativescript-toast')
 
 const UserLoginViewModel = require('../shared/user-login-model')
@@ -14,12 +14,12 @@ const user = new UserLoginViewModel()
 function onNavigatingTo(args) {
   const page = args.object
   page.bindingContext = user
-  page.actionBarHidden=true
+  page.actionBarHidden = true
 }
 
 function toggleDisplay() {
   user.isLoggingIn = !user.isLoggingIn
-  user.set('user.isLoggingIn',user.isLoggingIn)
+  user.set('user.isLoggingIn', user.isLoggingIn)
 }
 
 function login() {
@@ -33,10 +33,10 @@ function login() {
     })
     .then(function() {
       let viewToShow
-      if (user.role === constants.customerRole) {
-        viewToShow = 'views/adminView/menuView/menuView'
+      if (user.role === customer.role) {
+        viewToShow = customer.homescreen
       } else {
-        viewToShow = constants.adminView
+        viewToShow = admin.homescreen
       }
       frameModule.topmost().navigate(viewToShow)
     })

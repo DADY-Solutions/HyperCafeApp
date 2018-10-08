@@ -20,9 +20,9 @@ function handleErrors(response) {
 //is that after the user is logged in the login token that
 //is returned is needed to authenticate the requests
 function getCommonHeadersAfterLogin() {
-  return{
+  return {
     'Content-Type': 'application/json',
-    'Authorization': 'Kinvey '+config.token
+    'Authorization': `Kinvey ${config.token}`
   }
 }
 

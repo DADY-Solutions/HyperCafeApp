@@ -6,8 +6,9 @@ const requestUtils = require('../../utils/requestUtils')
 
 let viewModel
 let baseUrl
+
 function MenuCategoryModel(categories) {
-  baseUrl = config.apiUrl + 'appdata/' + config.appKey + '/MenuCategories'
+  baseUrl = `${config.apiUrl}appdata/${config.appKey}/MenuCategories`
   viewModel =  new ObservableArray(categories)
 
   viewModel.addCategory = function(category) {
@@ -51,7 +52,5 @@ function MenuCategoryModel(categories) {
   return viewModel
 
 }
-
-
 
 module.exports = MenuCategoryModel

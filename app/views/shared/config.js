@@ -1,4 +1,4 @@
-module.exports ={
+module.exports = {
   apiUrl: 'https://baas.kinvey.com/',
   apiHostname: 'CUSTDEP_HOST',
   micHostname: 'CUSTDEP_MIC_HOST',
