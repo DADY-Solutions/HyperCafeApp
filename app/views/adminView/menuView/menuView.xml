@@ -22,12 +22,12 @@
                     </GridLayout>
                 </accordion:Accordion.headerTemplate>
         
-                <!-- <accordion:Accordion.itemTemplate>
+                <accordion:Accordion.itemTemplate>
                     <StackLayout headerText="First">
                             
-                        <Label text="{{itemName}}"/>
+                        <Label text="{{name}}"/>
                     </StackLayout>
-                </accordion:Accordion.itemTemplate> -->
+                </accordion:Accordion.itemTemplate>
                         
             </accordion:Accordion>
 

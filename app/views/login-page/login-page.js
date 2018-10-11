@@ -7,9 +7,16 @@ logic, and to set up your page’s data binding.
 const frameModule = require('ui/frame')
 const constants = require('../shared/constants')
 const Toast = require('nativescript-toast')
-
+const config = require('../shared/config')
 const UserLoginViewModel = require('../shared/user-login-model')
 const user = new UserLoginViewModel()
+
+const Kinvey = require('kinvey-nativescript-sdk').Kinvey
+
+Kinvey.init({
+  appKey: config.appKey,
+  appSecret: config.appSecret,
+})
 
 function onNavigatingTo(args) {
   const page = args.object
@@ -23,25 +30,27 @@ function toggleDisplay() {
 }
 
 function login() {
-  user.login()
+  Kinvey.User.login(user.email, user.password)
     .catch(function(error) {
       console.log(error) // eslint-disable-line no-console
       //TODO print the actual error
       //undefined when using error.description or error._bodyTextDescription!!!
       Toast.makeText('Please use the correct credentials').show()
+      Kinvey.User.logout()
       return Promise.reject()
     })
-    .then(function() {
+    .then(function(loggedUser) {
+      user.role = loggedUser.role
+      config.token = loggedUser._kmd.authtoken
       let viewToShow
       if (user.role === constants.customerRole) {
-        viewToShow = 'views/adminView/menuView/menuView'
+        viewToShow = constants.customerView
       } else {
-        viewToShow = constants.adminView
+        viewToShow = 'views/adminView/menuView/menuView'
       }
       frameModule.topmost().navigate(viewToShow)
     })
 }
-
 function signUp() {
   user.register()
     .then(function() {
