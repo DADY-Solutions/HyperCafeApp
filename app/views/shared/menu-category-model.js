@@ -35,8 +35,10 @@ function MenuCategoryModel(categories) {
       .then(function(response) {
         return response.json()
       }).then(function(data) {
+
         data.forEach(function(category) {
           let categoryItems = new MenuItemCollection()
+
           categoryItems.fetchItemsForCategory(category)
           viewModel.push({
             categoryName: category.categoryName,
@@ -50,6 +52,11 @@ function MenuCategoryModel(categories) {
     while (viewModel.length) {
       viewModel.pop()
     }
+  }
+
+  viewModel.addItemToCategory= function(targetCategory, item) {
+    let categoryItems = targetCategory.items
+    categoryItems.addItem(targetCategory._id, item)
   }
 
   return viewModel

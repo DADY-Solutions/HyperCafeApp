@@ -4,12 +4,12 @@ const observableModule = require('data/observable')
 
 let page
 
+const frameModule = require('ui/frame')
 const categories = new MenuCategoryModel([])
 const pageData = new observableModule.fromObject({
   categories: categories,
   category: '',
 })
-
 
 exports.loaded = function(args) {
   page = args.object
@@ -18,6 +18,8 @@ exports.loaded = function(args) {
   categories.empty()
   categories.load()
 }
+
+
 
 exports.addCategory = function() {
 
@@ -46,5 +48,24 @@ exports.addCategory = function() {
     })
   // Empty the input field
   pageData.set('category', '')
+}
+
+exports.addItem = function(args) {
+
+  const categoryId = args.object.addToCategory
+  let category
+  for(let i=0;i<categories.length;i++) {
+    if(categories.getItem(i).id==categoryId) {
+      category = categories.getItem(i)
+    }
+  }
+
+  var navigationOptions={
+    moduleName: 'views/adminView/menuView/addItemView/addItemView',
+    context: {
+      category: category
+    }
+  }
+  frameModule.topmost().navigate(navigationOptions)
 }
 

@@ -14,20 +14,32 @@
             <Image src="~/images/add.png" tap="addCategory" col="1"/>
         </GridLayout>
         
-        <GridLayout row="1">
-            <accordion:Accordion items="{{categories}}" itemTapped="tapped" headerTextBold="true" allowMultiple="true" class="p-15" >
+        <GridLayout id="customAccordion" row="1">
+            
+            <accordion:Accordion items="{{categories}}" itemTapped="tapped" itemContentTap="childTapped" headerTextBold="true" class="p-15" >
                 <accordion:Accordion.headerTemplate>
-                    <GridLayout columns="auto">
-                        <Label class = "acc_header_label" text="{{categoryName}}"/>
+                    <GridLayout columns="auto,*">
+                        <Label class = "acc_header_label" text="{{categoryName}}" col="0"/>
+                        <Image src="~/images/add.png" tap="addItem" col="1" addToCategory="{{id}}"/>
                     </GridLayout>
                 </accordion:Accordion.headerTemplate>
         
-                <accordion:Accordion.itemTemplate>
-                    <StackLayout headerText="First">
-                            
-                        <Label text="{{name}}"/>
+                <accordion:Accordion.itemHeaderTemplate>
+                    <StackLayout>
+                        <GridLayout columns="auto,*">   
+                            <Label text="{{name}}" col="0"/>
+                            <Label text="{{price}}" col="1"/>
+                        </GridLayout>
                     </StackLayout>
-                </accordion:Accordion.itemTemplate>
+                </accordion:Accordion.itemHeaderTemplate>
+                
+                <accordion:Accordion.itemContentTemplate>
+                    <StackLayout>
+                        <GridLayout>
+                            <Label text="{{description}}" />
+                        </GridLayout>
+                    </StackLayout>
+                </accordion:Accordion.itemContentTemplate>
                         
             </accordion:Accordion>
 

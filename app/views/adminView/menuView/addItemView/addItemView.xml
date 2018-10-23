@@ -1,0 +1,24 @@
+<Page class="page" navigatingTo="onNavigatingTo"  
+    xmlns="http://schemas.nativescript.org/tns.xsd">
+
+    <Page.actionBar>
+      <ActionBar title="Create Item">
+         <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" tap="goBack"/>
+      </ActionBar>
+    </Page.actionBar>
+
+    <ScrollView>
+    <StackLayout class="p-15">
+        <GridLayout rows = "auto" columns="auto,auto">
+            <Label class="categoryLabel" text="Add to: " col="0"/>
+            <Label class="categoryLabel" id="category" text="{{categoryName}}" col="1"/>
+        </GridLayout>
+        <TextField hint="Name" text="{{itemName}}"/>
+        <TextView hint="Price" text="{{price}}"/>
+        <TextView hint="Description" text="{{description}}"/>
+        <Button class="btn btn-primary" text="CREATE" tap="createItem"/>
+        <Button class="link" text="CLEAR" tap="clearInput"/>
+
+    </StackLayout>
+    </ScrollView>
+</Page>

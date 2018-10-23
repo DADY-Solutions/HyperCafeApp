@@ -23,3 +23,9 @@ ActionBar{
     background-color: #EFAC43;
     color:white;
 }
+
+.btn-primary {
+    background-color:#EFAC43;
+    margin-left:0;
+    margin-right:0;
+  }

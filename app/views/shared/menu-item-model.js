@@ -14,7 +14,7 @@ function MenuItemCollection() {
 
   viewModel.fetchItemsForCategory = function(category) {
     let query = new Kinvey.Query()
-    query.equalTo('categoryId', category.categoryId)
+    query.equalTo('categoryId', category._id)
     itemsCollection.find(query)
       .subscribe(function(entities) {
         entities.forEach(function(entity) {
@@ -27,23 +27,38 @@ function MenuItemCollection() {
       })
   }
 
+  viewModel.addItem = function(categoryId, item) {
+    itemsCollection.save({
+      name: item.name,
+      price: item.price,
+      description: item.description,
+      categoryId: categoryId
+    })
+      .then(function(entity) {
+        viewModel.push(entity)
+      })
+      .catch(function(error) {
+        Toast.makeText(error,'long')
+      })
+  }
+
+  viewModel.addItemToCategory = function addItemToCategory(item) {
+    itemsCollection.save({
+      name: item.itemName,
+      price: item.price,
+      description: item.description,
+      categoryId: item.categoryId
+    }).then(function(entity) {
+      viewModel.push(entity)
+    }).catch(function(error) {
+      Toast.makeText(error,'long').show()
+    })
+  }
+
   return viewModel
 }
 
 
 
-// function addItemToCategory(item) {
-//   itemsCollection.save({
-//     name: item.name,
-//     price: item.price,
-//     description: item.description,
-//     categoryId: item.categoryId
-//   }).then(function(entity) {
-//     return entity
-//   }).catch(function(error) {
-//     Toast.makeText(error,'long').show()
-//   })
-// }
-
 module.exports = MenuItemCollection
-// module.exports = addItemToCategory
+
